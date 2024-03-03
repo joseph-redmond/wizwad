@@ -82,9 +82,8 @@ class Wad:
         return list(self._file_map.values())
 
     def open(self, file_name: str) -> BytesIO | None:
-        data = self.read(file_name)
 
-        if data is None:
+        if (data := self.read(file_name)) is None:
             return None
 
         return BytesIO(data)
